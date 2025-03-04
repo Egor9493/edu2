@@ -36,6 +36,10 @@ def print_dict(dct: dict):
             print(f"'{key}':'{el}'")
 
 
-if __name__ == "__main__":
+def main():
     countries = make_dict()
     print_dict(countries)
+
+
+if __name__ == "__main__":
+    main()

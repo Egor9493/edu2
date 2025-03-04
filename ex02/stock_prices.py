@@ -4,12 +4,11 @@ import sys
 def get_arg() -> str:
     args = sys.argv
 
-    if 1 < len(args) < 3:
+    if len(args) == 2:
         return args[1].capitalize()
 
 
-def show_price() -> None:
-
+def show_price(arg: str) -> None:
     COMPANIES = {
         'Apple': 'AAPL',
         'Microsoft': 'MSFT',
@@ -26,8 +25,6 @@ def show_price() -> None:
         'NOK': 3.37
     }
 
-    arg = get_arg()
-
     if arg:
         stock = COMPANIES.get(arg)
 
@@ -37,5 +34,10 @@ def show_price() -> None:
             print('Unknown company')
 
 
+def main():
+    arg = get_arg()
+    show_price(arg)
+
+
 if __name__ == "__main__":
-    show_price()
+    main()
